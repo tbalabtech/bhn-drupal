@@ -25,14 +25,14 @@ class BannerResource extends ResourceBase {
   public function get() {
     $entities = \Drupal::entityTypeManager()
                       ->getStorage('node')
-                      ->loadMultiple();
+                      ->loadByProperties(['type' => 'banner']);
 
     $result = [];
     foreach ($entities as $entity) {
 
       $result[] = [
         "title" => $entity->title->value,
-        "image_url" => $entity->body->value,
+        "image" => file_create_url($entity->field_image->entity->getFileUri()),
       ];
 
     }

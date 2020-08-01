@@ -1,0 +1,18 @@
+uuid: 03eebbeb-0115-421e-a678-3cb32a52ba4a
+langcode: en
+status: true
+dependencies:
+  module:
+    - rest_api
+    - serialization
+    - user
+id: banner_resource
+plugin_id: banner_resource
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - cookie

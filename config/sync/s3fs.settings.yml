@@ -14,7 +14,7 @@ encryption: ''
 use_https: false
 ignore_cache: false
 redirect_styles_ttl: 0
-no_rewrite_cssjs: false
+no_rewrite_cssjs: true
 root_folder: ''
 public_folder: ''
 private_folder: ''
