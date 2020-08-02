@@ -36,10 +36,10 @@ class ProductDetailResource extends ResourceBase {
 
       $result = [
         "id" => $entity->id(),
-        "title" => $entity->title->value,
-        "description" => $entity->body->value,
+        "name" => $entity->title->value,
+        "description" => strip_tags($entity->body->value),
         "price" => $entity->field_price->value,
-        "qty" => $entity->field_stock_quantity->value,
+        "stockQty" => $entity->field_stock_quantity->value,
         "category" => implode(',', $categoryList),
         "image" => ($entity->field_image->entity) ? file_create_url($entity->field_image->entity->getFileUri()) : '',
         "sku" => $entity->field_sku->value
